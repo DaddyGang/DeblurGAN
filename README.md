@@ -14,12 +14,15 @@ The model we use is Conditional Wasserstein GAN with Gradient Penalty + Perceptu
 ### Prerequisites
 - NVIDIA GPU + CUDA CuDNN (CPU untested, feedback appreciated)
 - Pytorch
-
+- Dependencies
+```bash
+pip install -r requirements.txt
+```
 Download weights from [Dropbox](https://www.dropbox.com/s/5r6cy0x72s8x9yf/latest_net_G.pth?dl=0) . Note that during the inference you need to keep only Generator weights.
 
 Put the weights into 
 ```bash
-/.checkpoints/experiment_name
+checkpoints/experiment_name
 ```
 To test a model put your blurry images into a folder and run:
 ```bash

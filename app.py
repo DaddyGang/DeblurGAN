@@ -17,7 +17,8 @@ OUTPUT_DIR = 'output'
 OUTPUT_FILENAME = 'generated.png'
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, OUTPUT_FILENAME)
 ARGS = '--dataroot ./mydata --model test --dataset_mode single \
-    --learn_residual --resize_or_crop scale_width_and_crop --gpu_ids 0 \
+    --learn_residual --resize_or_crop scale_width_and_crop \
+    --name pretrained --checkpoints_dir /checkpoints\
     --fineSize 512 --loadSizeX 512'
 
 # ARGS = '--dataroot ./mydata --model test --dataset_mode single \

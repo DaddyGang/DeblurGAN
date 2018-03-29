@@ -43,10 +43,10 @@ class BaseOptions():
 
 		self.initialized = True
 
-	def parse(self):
+	def parse(self, args=None):
 		if not self.initialized:
 			self.initialize()
-		self.opt = self.parser.parse_args()
+		self.opt = self.parser.parse_args(args)
 		self.opt.isTrain = self.isTrain   # train or test
 
 		str_ids = self.opt.gpu_ids.split(',')

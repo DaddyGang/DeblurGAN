@@ -25,7 +25,7 @@ def train(opt, data_loader, model, visualizer):
 				psnrMetric = PSNR(results['Restored_Train'],results['Sharp_Train'])
 				SSIMMetric = SSIM(results['Restored_Train'],results['Sharp_Train'])
 				psnrFile = fopen("psnrResults.txt", "a+")
-				psnrFile.write('PSNR on Train = %f , SSIM on Train = %f and epoch is %d' % (psnrMetric), (SSIMMetric), (epoch_iter))
+				psnrFile.write('PSNR on Train = %f , SSIM on Train = %f and epoch is %d' % (psnrMetric, SSIMMetric, epoch_iter))
 				psnrFile.close()
 				visualizer.display_current_results(results,epoch)
 

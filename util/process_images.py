@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 source_images_path = '../datasets/GO_PRO_DATASET_NO_BLUR/GOPRO_Large_all/test'
-save_path = '../datasets/ground_truth_processed/'
+save_path = '../datasets/ground_truth_processed/train/'
 count = 0
 for root, dirs, files in os.walk(source_images_path):
     path = root.split(os.sep)

@@ -3,7 +3,6 @@ from collections import OrderedDict
 import util.util as util
 from .base_model import BaseModel
 from . import networks
-from PIL import Image
 
 
 class TestModel(BaseModel):
@@ -28,7 +27,6 @@ class TestModel(BaseModel):
     def set_input(self, input):
         # we need to use single_dataset mode
         input_A = input['A']
-        #input_A  = Image.new('RGB', (256, 256), color = 'red')
         temp = self.input_A.clone()
         temp.resize_(input_A.size()).copy_(input_A)
         self.input_A = temp

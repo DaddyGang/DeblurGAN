@@ -21,7 +21,7 @@ class SingleDataset(BaseDataset):
         A_path = self.A_paths[index]
 
         A_img = Image.open(A_path).convert('RGB')
-
+        #A_img = Image.new('RGB', (256, 256), color = 'red')
         A_img = self.transform(A_img)
 
         return {'A': A_img, 'A_paths': A_path}

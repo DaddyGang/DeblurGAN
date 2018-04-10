@@ -7,7 +7,8 @@ from util.visualizer import Visualizer
 from pdb import set_trace as st
 from util import html
 from util.metrics import PSNR
-from ssim import SSIM
+#from ssim import SSIM
+from util.metrics import SSIM
 from PIL import Image
 
 opt = TestOptions().parse()
@@ -15,9 +16,10 @@ opt.nThreads = 1   # test code only supports nThreads = 1
 opt.batchSize = 1  # test code only supports batchSize = 1
 opt.serial_batches = True  # no shuffle
 opt.no_flip = True  # no flip
-
+#my_img = Image.new('RGB', (256, 256), color = 'red')
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
+#dataset.transform(my_img)
 model = create_model(opt)
 visualizer = Visualizer(opt)
 # create website
@@ -46,6 +48,6 @@ for i, data in enumerate(dataset):
 #avgPSNR /= counter
 #avgSSIM /= counter
 #print('PSNR = %f, SSIM = %f' %
-#				  (avgPSNR, avgSSIM))
+# 				  (avgPSNR, avgSSIM))
 
 webpage.save()

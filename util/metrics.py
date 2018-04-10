@@ -16,7 +16,7 @@ def create_window(window_size, channel):
 	return window
 
 def SSIM(img1, img2):
-	(_, channel, _, _) = img1.size()
+	(_, channel, _, _) = np.shape(img1)
 	window_size = 11
 	window = create_window(window_size, channel)
 	mu1 = F.conv2d(img1, window, padding = window_size/2, groups = channel)

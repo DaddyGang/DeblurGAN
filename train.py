@@ -23,7 +23,7 @@ def train(opt, data_loader, model, visualizer):
 			if total_steps % opt.display_freq == 0:
 				results = model.get_current_visuals()
 				psnrMetric = PSNR(results['Restored_Train'],results['Sharp_Train'])
-				SSIMMetric = SSIM(results['Restored_Train'],results['Sharp_Train'])
+				# SSIMMetric = SSIM(results['Restored_Train'],results['Sharp_Train'])
 				psnrFile = open("psnrResults.txt", "a+")
 				psnrFile.write('PSNR on Train = %f , SSIM on Train = %f and epoch is %d' % (psnrMetric, SSIMMetric, epoch_iter))
 				psnrFile.close()

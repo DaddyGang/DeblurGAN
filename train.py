@@ -23,8 +23,9 @@ def train(opt, data_loader, model, visualizer):
 			if total_steps % opt.display_freq == 0:
 				results = model.get_current_visuals()
 				psnrMetric = PSNR(results['Restored_Train'],results['Sharp_Train'])
-				print('PSNR on Train = %f' %
-					  (psnrMetric))
+				psnrFile = fopen("psnrResults.txt", "a+")
+				psnrFile.write('PSNR on Train = %f and epoch is %d' % (psnrMetric), (epoch_iter))
+				psnrFile.close()
 				visualizer.display_current_results(results,epoch)
 
 			if total_steps % opt.print_freq == 0:

@@ -11,3 +11,14 @@ node_modules/
 bundle.js
 cookies.txt
 
+# macOS
+.DS_Store
+
+# VScode
+.vscode/
+
+# checkpoints
+checkpoints/
+*.png
+.floydexpt
+.floydignore

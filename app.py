@@ -62,6 +62,10 @@ def deblur(model, data):
     model.test()
     return model.get_current_visuals()
 
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 # Every incoming POST request will run the `evaluate` method
 # The request method is POST (this method enables your to send arbitrary data to the endpoint in the request body, including images, JSON, encoded-data, etc.)
 
@@ -88,10 +92,6 @@ def evaluate(path):
     visuals = deblur(model, data)
     util.save_image(visuals['fake_B'], OUTPUT_PATH)
     return send_file(OUTPUT_PATH, mimetype='image/png')
-
-def allowed_file(filename):
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Load the model and run the server
 if __name__ == "__main__":

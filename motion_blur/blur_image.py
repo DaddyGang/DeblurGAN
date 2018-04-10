@@ -108,8 +108,8 @@ class BlurImage(object):
 
 
 if __name__ == '__main__':
-    folder = '../datasets/ground_truth_processed'
-    folder_to_save = '../datasets/motion_blurred_data'
+    folder = '../datasets/ground_truth_processed/train/motion_blurred_data/'
+    folder_to_save = '../datasets/motion_blurred_data/train/'
     params = [0.01, 0.009, 0.008, 0.007, 0.005, 0.003]
     for path in os.listdir(folder):
         print(path)
